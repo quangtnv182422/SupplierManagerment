@@ -1,0 +1,36 @@
+﻿<Window x:Class="WPFApp.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WPFApp"
+        mc:Ignorable="d"
+        Title="MainWindow" Loaded="Window_Loaded"  AllowsTransparency="True" Background="Transparent" WindowState="Maximized"
+        WindowStyle="None"
+        ResizeMode="NoResize">
+    <Grid OpacityMask="#FFEA8D28" HorizontalAlignment="Center" VerticalAlignment="Center" Width="1600" Height="936">
+        <Grid.Background>
+            <ImageBrush ImageSource="/wallpaperflare.com_wallpaper (4).jpg" Stretch="UniformToFill"/>
+        </Grid.Background>
+        <Frame x:Name="admin" Content="" Margin="0,66,0,67" NavigationUIVisibility="Hidden" Height="800" Width="1300" HorizontalAlignment="Right" />
+        <Grid Opacity="0.95" HorizontalAlignment="Left" Width="298" >
+
+            <Grid.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="Black"/>
+                    <GradientStop Offset="0.191" Color="#FFE2801B"/>
+                </LinearGradientBrush>
+            </Grid.Background>
+            <Button x:Name="productpage" Content="Products" HorizontalAlignment="Left" Margin="80,351,0,0" VerticalAlignment="Top" FontFamily="Arial Rounded MT Bold" FontSize="32" Background="{x:Null}" BorderBrush="{x:Null}" Click="productpage_Click" />
+            <Button x:Name="supplierpage" Content="Suppliers" HorizontalAlignment="Left" Margin="77,254,0,0" VerticalAlignment="Top" FontFamily="Arial Rounded MT Bold" FontSize="32" Background="{x:Null}" BorderBrush="{x:Null}" Click="supplierpage_Click" />
+            <Button x:Name="accountpage" Content="Account " HorizontalAlignment="Left" Margin="80,160,0,0" VerticalAlignment="Top" FontFamily="Arial Rounded MT Bold" FontSize="32" Background="{x:Null}" BorderBrush="{x:Null}" Click="accountpage_Click" RenderTransformOrigin="0.375,0.678" />
+            <Label x:Name="lbmember" Content="Admin" HorizontalAlignment="Left" VerticalAlignment="Top" Width="248" Height="106" Foreground="#FF218CC0" FontSize="72" FontFamily="Segoe UI Black" Margin="40,10,0,0" Background="{x:Null}"/>
+            <Label Content=" Supplier Management" HorizontalAlignment="Left" Margin="40,106,0,0" VerticalAlignment="Top" Width="268" Height="49" FontFamily="Bauhaus 93" FontSize="24" Foreground="#FFD92828"/>
+            <Button x:Name="exit" Content="Exit" Margin="0,0,103,116" FontFamily="Arial Rounded MT Bold" FontSize="32" Background="{x:Null}" BorderBrush="{x:Null}" Click="exit_Click" Width="62" HorizontalAlignment="Right" Height="41" VerticalAlignment="Bottom" />
+            <Button x:Name="Categories" Content="Categories" HorizontalAlignment="Left" Margin="63,0,0,0" VerticalAlignment="Center" FontFamily="Arial Rounded MT Bold" FontSize="32" Background="{x:Null}" BorderBrush="{x:Null}" Click="Categories_Click"/>
+            <Button x:Name="logout" Content="Log Out" Margin="0,0,65,174" FontFamily="Arial Rounded MT Bold" FontSize="32" Background="{x:Null}" BorderBrush="{x:Null}" Click="logout_Click" Width="140" HorizontalAlignment="Right" Height="41" VerticalAlignment="Bottom" />
+            <Button x:Name="Statistic" Content="Statistic" HorizontalAlignment="Left" Margin="89,542,0,0" VerticalAlignment="Top" FontFamily="Arial Rounded MT Bold" FontSize="32" Background="{x:Null}" BorderBrush="{x:Null}" Click="Statistic_Click"/>
+        </Grid>
+
+    </Grid>
+</Window>

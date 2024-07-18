@@ -1,0 +1,109 @@
+﻿<Page
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:WPFApp"
+      xmlns:Wpf="clr-namespace:Microsoft.Web.WebView2.Wpf;assembly=Microsoft.Web.WebView2.Wpf" x:Class="WPFApp.AccountPage"
+      mc:Ignorable="d" 
+ d:DesignHeight="800" d:DesignWidth="1300"
+      Title="AccountPage">
+
+    <Grid Background="#CCFFFFFF">
+        <DataGrid x:Name="dgData" Margin="0,421,0,0" Background="#FFECB675" BorderBrush="{x:Null}" SelectionChanged="dgData_SelectionChanged"/>
+        <Label Content="  Account Member Management" HorizontalAlignment="Center" VerticalAlignment="Top" Width="1300" Height="51" Background="#FFFF8A01" FontFamily="Arial Rounded MT Bold" FontSize="36"/>
+        <Button x:Name="btnCreate" BorderThickness="0" Content="ADD" Foreground="White" FontSize="22" FontFamily="Montserrat" Cursor="Hand" Margin="10,371,898,384" RenderTransformOrigin="0.161,-1.096" Background="#FFFF8A01" Click="btnCreate_Click" IsEnabled="{Binding IsAdmin}">
+            <Button.Style>
+                <Style TargetType="Button">
+                    <Setter Property="Background" Value="#0099FF"/>
+                    <Style.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Background" Value="#28AEED"/>
+                        </Trigger>
+                    </Style.Triggers>
+                </Style>
+            </Button.Style>
+            <Button.Template>
+                <ControlTemplate TargetType="Button">
+                    <Border Width="150" Height="40" CornerRadius="20" Background="{TemplateBinding Background}">
+                        <ContentPresenter VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                    </Border>
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
+        <Button x:Name="btnUpdate" BorderThickness="0" Content="UPDATE" Foreground="White" FontSize="22" FontFamily="Montserrat" Cursor="Hand" Margin="182,371,726,384" RenderTransformOrigin="0.161,-1.096" Background="#FFFF8A01" Click="btnUpdate_Click" IsEnabled="{Binding IsAdmin}">
+            <Button.Style>
+                <Style TargetType="{x:Type Button}">
+                    <Setter Property="Background" Value="#0099FF"/>
+                    <Style.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Background" Value="#28AEED"/>
+                        </Trigger>
+                    </Style.Triggers>
+                </Style>
+            </Button.Style>
+            <Button.Template>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Border Width="150" Height="40" CornerRadius="20" Background="{TemplateBinding Background}">
+                        <ContentPresenter VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                    </Border>
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
+        <Button x:Name="btnDelete" BorderThickness="0" Content="DELETE" Foreground="White" FontSize="22" FontFamily="Montserrat" Cursor="Hand" Margin="359,371,549,384" RenderTransformOrigin="0.161,-1.096" Background="#FFFF8A01" Click="btnDelete_Click" IsEnabled="{Binding IsAdmin}">
+            <Button.Style>
+                <Style TargetType="{x:Type Button}">
+                    <Setter Property="Background" Value="#0099FF"/>
+                    <Style.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Background" Value="#28AEED"/>
+                        </Trigger>
+                    </Style.Triggers>
+                </Style>
+            </Button.Style>
+            <Button.Template>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Border Width="150" Height="40" CornerRadius="20" Background="{TemplateBinding Background}">
+                        <ContentPresenter VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                    </Border>
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
+        <Button x:Name="btnReset" BorderThickness="0" Content="REFRESH" Foreground="White" FontSize="22" FontFamily="Montserrat" Cursor="Hand" Margin="536,371,372,384" RenderTransformOrigin="0.161,-1.096" Background="#FFFF8A01" Click="btnReset_Click">
+            <Button.Style>
+                <Style TargetType="{x:Type Button}">
+                    <Setter Property="Background" Value="#0099FF"/>
+                    <Style.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Background" Value="#28AEED"/>
+                        </Trigger>
+                    </Style.Triggers>
+                </Style>
+            </Button.Style>
+            <Button.Template>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Border Width="150" Height="40" CornerRadius="20" Background="{TemplateBinding Background}">
+                        <ContentPresenter VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                    </Border>
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
+        <Label Content="MemberID" HorizontalAlignment="Left" Margin="10,73,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.719,1.412" FontFamily="Arial Rounded MT Bold" FontSize="36"/>
+        <TextBox x:Name="txtMemberId" HorizontalAlignment="Left" Margin="223,77,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="828" Height="44" FontSize="22" Background="{x:Null}" BorderBrush="#BFFF8A01" SelectionBrush="#BFFF8A01" SelectionTextBrush="#BFFF8A01" FontFamily="Arial Rounded MT Bold"/>
+        <Label Content="Password" HorizontalAlignment="Left" Margin="17,134,0,0" VerticalAlignment="Top" FontSize="36" FontFamily="Arial Rounded MT Bold"/>
+        <PasswordBox x:Name="txtPassword" HorizontalAlignment="Left" Margin="223,138,0,0" VerticalAlignment="Top" Width="828" Height="44" FontSize="24" Background="{x:Null}" BorderBrush="#BFFF8A01" SelectionBrush="#BFFF8A01" SelectionTextBrush="#BFFF8A01" FontFamily="Arial Rounded MT Bold"/>
+        <Label Content="Full Name" HorizontalAlignment="Left" Margin="17,193,0,0" VerticalAlignment="Top" FontFamily="Arial Rounded MT Bold" FontSize="36" RenderTransformOrigin="0.509,1.426"/>
+        <TextBox x:Name="txtFullName" HorizontalAlignment="Left" Margin="223,198,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="828" Height="41" FontSize="24" Background="{x:Null}" BorderBrush="#BFFF8A01" SelectionBrush="#BFFF8A01" SelectionTextBrush="#BFFF8A01" FontFamily="Arial Rounded MT Bold"/>
+        <TextBox HorizontalAlignment="Left" Margin="57,250,0,0" TextWrapping="Wrap" Text="Email" VerticalAlignment="Top" FontFamily="Arial Rounded MT Bold" FontSize="36" BorderBrush="{x:Null}" Background="{x:Null}"/>
+        <TextBox x:Name="txtEmail" HorizontalAlignment="Left" Margin="223,250,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="828" Height="44" SelectionBrush="#FFCD9F67" FontSize="24" Background="{x:Null}" BorderBrush="#BFFF8A01" SelectionTextBrush="#BFFF8A01" FontFamily="Arial Rounded MT Bold"/>
+        <Label Content="Role" HorizontalAlignment="Left" Margin="61,299,0,0" VerticalAlignment="Top" FontFamily="Arial Rounded MT Bold" FontSize="36"/>
+        <TextBox x:Name="txtRole" HorizontalAlignment="Left" Margin="223,307,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="828" Height="44" FontSize="24" Background="{x:Null}" BorderBrush="#BFFF8A01" SelectionBrush="#BFFF8A01" SelectionTextBrush="#BFFF8A01" OpacityMask="#BFFF8A01" FontFamily="Arial Rounded MT Bold"/>
+        <Label Content="Filter by Name:" HorizontalAlignment="Left" Margin="1072,75,0,0" VerticalAlignment="Top" FontFamily="Arial Rounded MT Bold" FontSize="24"/>
+        <TextBox x:Name="txtFilterName" HorizontalAlignment="Left" Margin="1072,115,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="200" Height="31" BorderBrush="#BFFF8A01" Background="{x:Null}" SelectionBrush="#BFFF8A01" SelectionTextBrush="#BFFF8A01" FontSize="20"/>
+        <Button Content="Filter" HorizontalAlignment="Left" Margin="1072,156,0,0" VerticalAlignment="Top" Height="31" Width="200" BorderBrush="Black" Click="btnFilterByName_Click" Foreground="White" Background="#0099FF"/>
+
+        <Label Content="Filter by Role:" HorizontalAlignment="Left" Margin="1072,205,0,0" VerticalAlignment="Top" FontFamily="Arial Rounded MT Bold" FontSize="24"/>
+        <TextBox x:Name="txtFilterRole" HorizontalAlignment="Left" Margin="1072,245,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="200" Height="31" BorderBrush="#BFFF8A01" Background="{x:Null}" SelectionBrush="#BFFF8A01" SelectionTextBrush="#BFFF8A01" FontSize="20"/>
+        <Button Content="Filter" HorizontalAlignment="Left" Margin="1072,286,0,0" VerticalAlignment="Top" Height="31" Width="200" BorderBrush="Black" Click="btnFilterByRole_Click" Foreground="White" Background="#0099FF"/>
+    </Grid>
+</Page>

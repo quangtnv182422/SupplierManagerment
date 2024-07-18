@@ -1,0 +1,112 @@
+﻿<Page x:Class="WPFApp.ProductCategoriesPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:WPFApp"
+      mc:Ignorable="d" 
+      d:DesignHeight="800" d:DesignWidth="1300"
+      Title="ProductCategoriesPage">
+
+    <Grid Background="#CCFFFFFF">
+        <DataGrid x:Name="dgCategories" Margin="0,488,0,0" Background="#BFE69D47" BorderBrush="{x:Null}" SelectionChanged="dgCategories_SelectionChanged" AutoGenerateColumns="False">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Category ID" Binding="{Binding SupplierCategoryId}" Width="*" />
+                <DataGridTextColumn Header="Category Name" Binding="{Binding SupplierCategoryName}" Width="*" />
+            </DataGrid.Columns>
+        </DataGrid>
+
+        <Label Content="  Supplier Categories Management" HorizontalAlignment="Center" VerticalAlignment="Top" Background="#BFFF8A01" FontFamily="Arial Rounded MT Bold" FontSize="36" Width="1300"/>
+
+        <Button x:Name="btnAddCategory" BorderThickness="0" Content="ADD" Foreground="White" FontSize="22" FontFamily="Montserrat" Cursor="Hand" Margin="10,371,898,384" RenderTransformOrigin="0.161,-1.096" Background="#BFFF8A01" Click="btnAddCategory_Click">
+            <Button.Style>
+                <Style TargetType="Button">
+                    <Setter Property="Background" Value="#0099FF"/>
+                    <Style.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Background" Value="#28AEED"/>
+                        </Trigger>
+                    </Style.Triggers>
+                </Style>
+            </Button.Style>
+            <Button.Template>
+                <ControlTemplate TargetType="Button">
+                    <Border Width="150" Height="40" CornerRadius="20" Background="{TemplateBinding Background}">
+                        <ContentPresenter VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                    </Border>
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
+
+        <Button x:Name="btnUpdateCategory" BorderThickness="0" Content="UPDATE" Foreground="White" FontSize="22" FontFamily="Montserrat" Cursor="Hand" Margin="182,371,726,384" RenderTransformOrigin="0.161,-1.096" Background="#BFFF8A01" Click="btnUpdateCategory_Click">
+            <Button.Style>
+                <Style TargetType="Button">
+                    <Setter Property="Background" Value="#0099FF"/>
+                    <Style.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Background" Value="#28AEED"/>
+                        </Trigger>
+                    </Style.Triggers>
+                </Style>
+            </Button.Style>
+            <Button.Template>
+                <ControlTemplate TargetType="Button">
+                    <Border Width="150" Height="40" CornerRadius="20" Background="{TemplateBinding Background}">
+                        <ContentPresenter VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                    </Border>
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
+
+        <Button x:Name="btnDeleteCategory" BorderThickness="0" Content="DELETE" Foreground="White" FontSize="22" FontFamily="Montserrat" Cursor="Hand" Margin="359,371,549,384" RenderTransformOrigin="0.161,-1.096" Background="#BFFF8A01" Click="btnDeleteCategory_Click">
+            <Button.Style>
+                <Style TargetType="Button">
+                    <Setter Property="Background" Value="#0099FF"/>
+                    <Style.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Background" Value="#28AEED"/>
+                        </Trigger>
+                    </Style.Triggers>
+                </Style>
+            </Button.Style>
+            <Button.Template>
+                <ControlTemplate TargetType="Button">
+                    <Border Width="150" Height="40" CornerRadius="20" Background="{TemplateBinding Background}">
+                        <ContentPresenter VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                    </Border>
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
+
+        <Button x:Name="btnRefreshCategories" BorderThickness="0" Content="REFRESH" Foreground="White" FontSize="22" FontFamily="Montserrat" Cursor="Hand" Margin="536,371,372,384" Background="#BFFF8A01" Click="btnRefreshCategories_Click">
+            <Button.Style>
+                <Style TargetType="Button">
+                    <Setter Property="Background" Value="#0099FF"/>
+                    <Style.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Background" Value="#28AEED"/>
+                        </Trigger>
+                    </Style.Triggers>
+                </Style>
+            </Button.Style>
+            <Button.Template>
+                <ControlTemplate TargetType="Button">
+                    <Border Width="150" Height="40" CornerRadius="20" Background="{TemplateBinding Background}">
+                        <ContentPresenter VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                    </Border>
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
+
+        <Label Content="Search :" HorizontalAlignment="Left" Margin="10,435,0,0" VerticalAlignment="Top" FontFamily="Arial Rounded MT Bold" FontSize="24"/>
+        <TextBox x:Name="txtSearchCategory" HorizontalAlignment="Left" Margin="119,442,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="887" Height="31" Background="White" BorderBrush="#BFFF8A01" TextChanged="txtSearchCategory_TextChanged"/>
+
+        <Button Content="Search" HorizontalAlignment="Left" Margin="1011,442,0,0" VerticalAlignment="Top" Height="31" Width="100" BorderBrush="Black" Foreground="White" Background="#0099FF" Click="btnSearchCategory_Click"/>
+
+        <Label Content="ID" HorizontalAlignment="Left" Margin="116,80,0,0" VerticalAlignment="Top" FontFamily="Arial Rounded MT Bold" FontSize="36"/>
+        <TextBox x:Name="txtCategoryId" HorizontalAlignment="Left" Margin="342,80,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="719" Height="44" FontSize="24" Background="White" BorderBrush="#BFFF8A01" FontFamily="Arial Rounded MT Bold"/>
+
+        <Label Content="Category Name" HorizontalAlignment="Left" Margin="-1,141,0,0" VerticalAlignment="Top" FontFamily="Arial Rounded MT Bold" FontSize="36"/>
+        <TextBox x:Name="txtCategoryName" HorizontalAlignment="Left" Margin="342,149,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="719" Height="44" FontSize="24" Background="White" BorderBrush="#BFFF8A01" FontFamily="Arial Rounded MT Bold"/>
+    </Grid>
+</Page>

@@ -1,0 +1,30 @@
+﻿<Page x:Class="WPFApp.Statistic"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+      xmlns:local="clr-namespace:WPFApp"
+      xmlns:oxy="http://oxyplot.org/wpf"
+      mc:Ignorable="d"
+      Title="Statistic">
+    <Grid Background="#CCFCFCFC">
+        <Label Content="Product Statistics" HorizontalAlignment="Center" VerticalAlignment="Top" Width="1300" Height="51" Background="#FFFF8A01" FontFamily="Arial Rounded MT Bold" FontSize="36"/>
+
+        <!-- Bar Chart for Product Count by Supplier -->
+        <GroupBox Header="Product Count by Supplier" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,70,0,0" Width="620" Height="350">
+            <oxy:PlotView x:Name="ProductCountBySupplierChart" />
+        </GroupBox>
+
+        <GroupBox Header="Product Distribution by Package Type" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="650,70,0,0" Width="620" Height="350">
+            <oxy:PlotView x:Name="ProductDistributionByPackageTypeChart" />
+        </GroupBox>
+
+        <GroupBox Header="Average Unit Price by Supplier" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,430,0,0" Width="620" Height="350">
+            <oxy:PlotView x:Name="AverageUnitPriceBySupplierChart" />
+        </GroupBox>
+
+        <GroupBox Header="Product Distribution by Color" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="650,430,0,0" Width="620" Height="350">
+            <oxy:PlotView x:Name="ProductDistributionByColorChart" />
+        </GroupBox>
+    </Grid>
+</Page>
